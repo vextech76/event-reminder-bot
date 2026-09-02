@@ -1,0 +1,11 @@
+services:
+  event-reminder-bot:
+    build: .
+    container_name: event-reminder-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      DATA_DIR: /app/data
+    volumes:
+      - ./data:/app/data
